@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Plug and Play Energy Systems</title>
     <!-- Dependencies -->
     <link rel="stylesheet" href="vendors/styles/normalize.css">
     <link rel="stylesheet" href="vendors/styles/default.css">
@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/icon.css">
     <link rel="stylesheet" href="styles/module.css">
+    <!-- Templates -->
+    <script id="team-template" type="text/x-handlebars-template">
+      <h3>{{name}}</h3>
+      <p class="bold-font">{{title}}</p>
+      <p>{{bio}}</p>
+    </script>
   </head>
   <body>
     <h1>Plug and Play</h1>
@@ -20,12 +26,24 @@
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/live">Live</a></li>
           <li><a href="/team">Team</a></li>
         </ul>
       </nav>
     </div>
     <div id="home">
       <h2>Home</h2>
+    </div>
+    <div id="products">
+      <h2>Products</h2>
+    </div>
+    <div id="projects">
+      <h2>Projects</h2>
+    </div>
+    <div id="live-data">
+      <h2>Live/Main.html</h2>
     </div>
     <div id="team">
       <h2>Team</h2>
@@ -38,10 +56,14 @@
     <script src="vendors/scripts/page.js"></script>
     <!-- Frameworks -->
     <script src="scripts/models/app.js"></script>
+    <script src="scripts/models/team.js"></script>
     <!-- Filters/Views -->
     <script src="scripts/views/appView.js"></script>
     <!-- Routes -->
     <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/productsController.js"></script>
+    <script src="scripts/controllers/projectsController.js"></script>
+    <script src="scripts/controllers/liveController.js"></script>
     <script src="scripts/controllers/teamController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
   </body>
