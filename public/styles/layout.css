@@ -1,5 +1,18 @@
-
-
+.small{
+  max-width: 20%;
+}
+.medium{
+  max-width: 40%;
+}
+.large{
+  max-width: 80%;
+}
+.icon-list2{
+  display: inline;
+  text-align: right;
+}
 @media screen and (min-width: 600px){
-
+  #navigation ul li a{
+    
+  }
 }

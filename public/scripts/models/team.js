@@ -9,7 +9,7 @@ function Team(data){
 
 Team.all = [];
 
-Team.toHtml = function(){
+Team.tohtml = function(){
   let template = Handlebars.compile($('#team-template').html());
   Team.all.forEach((ele) => $('#team').append(template(ele)));
 };
@@ -17,5 +17,5 @@ Team.toHtml = function(){
 Team.fetch = function(){
   $.getJSON('data/teamData.json').then(function(rawData){
     rawData.forEach((ele) => Team.all.push(new Team(ele)));
-  }).then(() => Team.toHtml());
+  }).then(() => Team.tohtml());
 }();

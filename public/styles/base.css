@@ -1,0 +1,15 @@
+*{
+  font-family: 'Kurale', serif;
+}
+h2, h3{
+  font-family: 'Space Mono', monospace;
+}
+a{
+  font-family: 'Gilda Display', serif;
+}
+div{
+  margin: 0px 5% 0px 5%;
+}
+#title{
+  margin: 0px;
+}
