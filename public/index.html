@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Plug and Play Energy Systems</title>
     <!-- Dependencies -->
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Dancing+Script|Exo|Gilda+Display|Italianno|Kurale|Open+Sans+Condensed:300|Petit+Formal+Script|Space+Mono" rel="stylesheet">
     <link rel="stylesheet" href="vendors/styles/normalize.css">
     <link rel="stylesheet" href="vendors/styles/default.css">
     <!-- CSS -->
@@ -13,23 +14,66 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/icon.css">
     <link rel="stylesheet" href="styles/module.css">
+    <!-- Templates -->
+    <script id="team-template" type="text/x-handlebars-template">
+      <h3>{{name}}</h3>
+      <p class="bold-font">{{title}}</p>
+      <p>{{bio}}</p>
+      <hr>
+    </script>
+    <script id="product-template" type="text/x-handlebars-template">
+      <h3>{{product}}</h3>
+      <p><a href="{{links}}">view</a></p>
+      {{{discription}}}
+      <hr>
+    </script>
   </head>
   <body>
-    <h1>Plug and Play</h1>
     <div id="title">
-      <nav>
+      <img class="medium" src="images/img-holder.png" alt="images/img-holder.png"></img>
+      <span class="icon-list2"></span>
+      <nav id="navigation">
         <ul>
           <li><a href="/">Home</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/live">Live</a></li>
           <li><a href="/team">Team</a></li>
         </ul>
       </nav>
     </div>
     <div id="home">
       <h2>Home</h2>
+      <p>Plug and Play Energy Systems (PPES) is a Hawaii based energy systems and development company with over 35 years in Storage and Communication design, engineering and installations.<br>PowerLord™ includes Military, Utility, Commercial and Residential solutions, providing individual design, engineering, hardware and software platforms for our customer’s unique situation, no matter size or existing inputs, distribution, demand or configuration.<br>PowerLord™ software solutions or patches provide multi-layered communication options to suit all security, public or emergency service requirements.<br>Energy Storage is about math, physics and chemistry.<br>Understanding, designing and engineering systems to get all of these functions to work together is a new science that is being redefined and tested every day as batteries and other storage devices rapidly evolve.  Unfortunately, many times that evolution has been accompanied by marketing and promotional hype that conceals inherent flaws in chemistry or safety that can or might not interact with existing grid or customer technology, desire or needs.<br>Because this science is so new, many utility and solar development companies, large and small simply do not have employees with the background, knowledge or skills to understand these complex interactions.</p>
+    </div>
+    <div id="products">
+      <h2>About Our Products</h2>
+      <p>Customer Self-Supply (CSS)<br>CSS enables customers to install PV systems that do not export power to the utility grid. These systems usually incorporate the use of. All power produced by the customer's system is used or stored for use by the customer at a later time.<br>CSS systems are eligible for expedited review and approval of applications in areas with high levels of PV. CSS is only available for solar PV systems and not for other forms of renewable energy.</p><hr>
+    </div>
+    <div id="projects">
+      <h2>Projects</h2>
+    </div>
+    <div id="live-data">
+      <h2>Live/Main.html</h2>
     </div>
     <div id="team">
       <h2>Team</h2>
     </div>
+    <section id="image-slider">
+      <span id="slider-image-1"></span>
+      <span id="slider-image-2"></span>
+      <span id="slider-image-3"></span>
+      <div class="image-holder">
+          <img src="images/img-holder.png" class="slider-image" />
+          <img src="images/img-holder.png" class="slider-image" />
+          <img src="images/img-holder.png" class="slider-image" />
+      </div>
+      <div class="button-holder">
+          <a href="#slider-image-1" class="slider-change"></a>
+          <a href="#slider-image-2" class="slider-change"></a>
+          <a href="#slider-image-3" class="slider-change"></a>
+      </div>
+    </section>
     <!-- Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="vendors/scripts/handlebars.js"></script>
@@ -38,10 +82,15 @@
     <script src="vendors/scripts/page.js"></script>
     <!-- Frameworks -->
     <script src="scripts/models/app.js"></script>
+    <script src="scripts/models/product.js"></script>
+    <script src="scripts/models/team.js"></script>
     <!-- Filters/Views -->
     <script src="scripts/views/appView.js"></script>
     <!-- Routes -->
     <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/productsController.js"></script>
+    <script src="scripts/controllers/projectsController.js"></script>
+    <script src="scripts/controllers/liveController.js"></script>
     <script src="scripts/controllers/teamController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
   </body>

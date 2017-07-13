@@ -3,6 +3,9 @@
 
   teamController.init = function(){
     $('#home').hide();
+    $('#products').hide();
+    $('#projects').hide();
+    $('#live-data').hide();
     $('#team').fadeIn('slow');
   };
 
