@@ -10,6 +10,15 @@ a{
 div{
   margin: 0px 5% 0px 5%;
 }
+html{
+
+}
+body{
+  background-color: #5B5E80;
+}
 #title{
   margin: 0px;
+  background-color: #fff;
+  background: hsl(227, 10%, 10%);
+  /*background: hsla(227, 10%, 10%, .5);*/
 }

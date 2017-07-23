@@ -11,8 +11,11 @@
   display: inline;
   text-align: right;
 }
+#navigation{
+  max-width: 100%;
+}
 @media screen and (min-width: 600px){
   #navigation ul li a{
-    
+
   }
 }

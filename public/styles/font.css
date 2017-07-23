@@ -10,11 +10,19 @@ i{
 }
 li a{
   text-decoration: none;
-  color: black;
+  color: inherit;
+  margin: inherit;
+  padding: inherit;
 }
 @media screen and (min-width: 600px){
-  #navigation ul li a{
-    font-size: 40px;
+  /*#navigation ul li a{
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
     margin: 0px 10px 0px 10px;
+    border: double white 3px;
   }
+  #navigation{
+    margin-bottom: 10px;
+  }*/
 }
