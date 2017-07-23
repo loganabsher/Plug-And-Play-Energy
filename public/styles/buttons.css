@@ -13,7 +13,21 @@
   box-shadow: 0 0.5em 0.5em -0.4em;
   transform: translateY(-0.25em);
 }
-
+.one{
+  color: #a972cb;
+}
+.two{
+  color: #ef6eae;
+}
+.three{
+  color: #ff7f82;
+}
+.four{
+  color: #ffa260;
+}
+.five{
+  color: #8fc866;
+}
 $colors: (
   fill: #a972cb,
   pulse: #ef6eae,
@@ -32,7 +46,7 @@ $colors: (
 }
 
 button {
-  color: #e4cb58;
+  /*color: #e4cb58;*/
   transition: 0.5s;
 
   &:hover,

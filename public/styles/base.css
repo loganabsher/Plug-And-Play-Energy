@@ -1,5 +1,6 @@
 *{
   font-family: 'Kurale', serif;
+  background: hsl(227, 10%, 10%);
 }
 h2, h3{
   font-family: 'Space Mono', monospace;
@@ -13,12 +14,11 @@ div{
 html{
 
 }
-body{
-  background-color: #5B5E80;
+hr{
+  color: black;
+  background-color: black;
 }
 #title{
   margin: 0px;
-  background-color: #fff;
-  background: hsl(227, 10%, 10%);
   /*background: hsla(227, 10%, 10%, .5);*/
 }
