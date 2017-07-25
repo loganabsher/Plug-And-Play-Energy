@@ -1,24 +1,26 @@
 *{
-  font-family: 'Kurale', serif;
+  /*font-family: 'Kurale', serif;*/
   background: hsl(227, 10%, 10%);
 }
-h2, h3{
+/*h2, h3{
   font-family: 'Space Mono', monospace;
 }
 a{
   font-family: 'Gilda Display', serif;
-}
+}*/
 div{
   margin: 0px 5% 0px 5%;
 }
-html{
-
+p{
+  font-size: 1.2em;
 }
 hr{
   color: black;
   background-color: black;
 }
-#title{
+#title, #jssor_1, #jssor_1 div{
   margin: 0px;
-  /*background: hsla(227, 10%, 10%, .5);*/
+}
+#title{
+  background: hsla(227, 10%, 10%, .5);
 }
