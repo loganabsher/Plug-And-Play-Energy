@@ -1,5 +1,7 @@
 'use strict';
 
+const handle = require('..../lib/handlebars-helper.js')
+
 // bio constructor
 function Team(data){
   this.name = data.name;
