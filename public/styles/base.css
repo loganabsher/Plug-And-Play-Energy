@@ -1,7 +1,7 @@
-*{
+/* *{
   /*font-family: 'Kurale', serif;*/
   background: hsl(227, 10%, 10%);
-}
+} */
 /*h2, h3{
   font-family: 'Space Mono', monospace;
 }
@@ -24,3 +24,12 @@ hr{
 #title{
   background: hsla(227, 10%, 10%, .5);
 }
+
+/* disables pause for video iframe */
+
+.ytplayer {
+pointer-events: none;
+position: absolute;
+cursor: default;
+}
+

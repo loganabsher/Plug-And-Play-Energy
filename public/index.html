@@ -45,7 +45,7 @@
         jQuery(document).ready(function ($) {
             var options = {
                 $AutoPlay: true,                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $DragOrientation: 3,                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $DragOrientation: 0,                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
                 $AutoPlayInterval: 4000,            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
                 $PauseOnHover: 1,                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
                 $ArrowKeyNavigation: true,   		//[Optional] Allows keyboard (arrow key) navigation or not, default value is false
@@ -97,14 +97,32 @@
     <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 640px;
         height: 390px;">
         <!-- Slides Container -->
-        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 640px; height: 390px;
+        <div u="slides" style="cursor: default; position: absolute; left: 0px; top: 0px; width: 640px; height: 390px;
             overflow: hidden;">
             <div>
+                <div u="player" style="position: relative; top: -90px; left: 0px; width: 640px; height: 525px; overflow: hidden;">
+                    <!-- iframe in ebay page is not allowed, youtube iframe video is not supported for ebay listing -->
+                    <iframe class="ytplayer" pHandler="ytiframe" pHideControls="0" width="640" height="460" style="z-index: 0;" url="http://www.youtube.com/embed/08_AKzqlCiM?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent&autoplay=1&controls=0&loop=0&modestbranding=1&showinfo=0&autohide=1&rel=0" frameborder="0" scrolling="no"></iframe>
+                    <!-- play cover begin (optional, can remove play cover) -->
+                    <!-- <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: pointer; display: none; z-index: 1;"></div> -->
+                    <!-- play cover end -->
+                    <!-- close button begin (optional, can remove close button) -->
+                    <!-- <style>
+                        .closeButton { background-image: url(../img/close.png); }
+                        .closeButton:hover { background-position: -30px 0px; }
+                    </style>
+                    <div u="close" class="closeButton" style="position: absolute; top: 0px; right: 1px;
+                        width: 30px; height: 30px; background-color: #000; cursor: pointer; display: none; z-index: 2;">
+                    </div>
+                     close button end  -->
+                </div>
+            </div>
+            <div>
                 <div u="player" style="position: relative; top: 0px; left: 0px; width: 640px; height: 390px; overflow: hidden;">
                     <!-- iframe in ebay page is not allowed, youtube iframe video is not supported for ebay listing -->
-                    <iframe pHandler="ytiframe" pHideControls="0" width="640" height="390" style="z-index: 0;" url="http://www.youtube.com/embed/08_AKzqlCiM?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="ytplayer" pHandler="ytiframe" pHideControls="0" width="640" height="390" style="z-index: 0;" url="http://www.youtube.com/embed/08_AKzqlCiM?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent?autoplay=1" frameborder="0" scrolling="no"></iframe>
                     <!-- play cover begin (optional, can remove play cover) -->
-                    <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: pointer; display: none; z-index: 1;"></div>
+                    <!-- <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: pointer; display: none; z-index: 1;"></div> -->
                     <!-- play cover end -->
                     <!-- close button begin (optional, can remove close button) -->
                     <style>
@@ -112,7 +130,7 @@
                         .closeButton:hover { background-position: -30px 0px; }
                     </style>
                     <div u="close" class="closeButton" style="position: absolute; top: 0px; right: 1px;
-                        width: 30px; height: 30px; background-color: #000; cursor: pointer; display: none; z-index: 2;">
+                        width: 30px; height: 30px; background-color: #000; cursor: default; display: none; z-index: 2;">
                     </div>
                     <!-- close button end -->
                 </div>
@@ -120,9 +138,9 @@
             <div>
                 <div u="player" style="position: relative; top: 0px; left: 0px; width: 640px; height: 390px; overflow: hidden;">
                     <!-- iframe in ebay page is not allowed, youtube iframe video is not supported for ebay listing -->
-                    <iframe pHandler="ytiframe" pHideControls="0" width="640" height="390" style="z-index: 0;" url="http://www.youtube.com/embed/QjKO10hKtYw?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="ytplayer" pHandler="ytiframe" pHideControls="0" width="640" height="390" style="z-index: 0;" url="http://www.youtube.com/embed/b-3BI9AspYc?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent&autoplay=1" frameborder="0" scrolling="no"></iframe>
                     <!-- play cover begin (optional, can remove play cover) -->
-                    <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: pointer; display: none; z-index: 1;"></div>
+                    <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: default; display: none; z-index: 1;"></div>
                     <!-- play cover end -->
                     <!-- close button begin (optional, can remove close button) -->
                     <style>
@@ -130,7 +148,7 @@
                         .closeButton:hover { background-position: -30px 0px; }
                     </style>
                     <div u="close" class="closeButton" style="position: absolute; top: 0px; right: 1px;
-                        width: 30px; height: 30px; background-color: #000; cursor: pointer; display: none; z-index: 2;">
+                        width: 30px; height: 30px; background-color: #000; cursor: default; display: none; z-index: 2;">
                     </div>
                     <!-- close button end -->
                 </div>
@@ -138,9 +156,9 @@
             <div>
                 <div u="player" style="position: relative; top: 0px; left: 0px; width: 640px; height: 390px; overflow: hidden;">
                     <!-- iframe in ebay page is not allowed, youtube iframe video is not supported for ebay listing -->
-                    <iframe pHandler="ytiframe" pHideControls="0" width="640" height="390" style="z-index: 0;" url="http://www.youtube.com/embed/b-3BI9AspYc?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="ytplayer" pHandler="ytiframe" pHideControls="0" width="640" height="390" style="z-index: 0;" url="http://www.youtube.com/embed/YbT0xy_Jai0?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent" frameborder="0" scrolling="no"></iframe>
                     <!-- play cover begin (optional, can remove play cover) -->
-                    <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: pointer; display: none; z-index: 1;"></div>
+                    <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: default; display: none; z-index: 1;"></div>
                     <!-- play cover end -->
                     <!-- close button begin (optional, can remove close button) -->
                     <style>
@@ -148,25 +166,7 @@
                         .closeButton:hover { background-position: -30px 0px; }
                     </style>
                     <div u="close" class="closeButton" style="position: absolute; top: 0px; right: 1px;
-                        width: 30px; height: 30px; background-color: #000; cursor: pointer; display: none; z-index: 2;">
-                    </div>
-                    <!-- close button end -->
-                </div>
-            </div>
-            <div>
-                <div u="player" style="position: relative; top: 0px; left: 0px; width: 640px; height: 390px; overflow: hidden;">
-                    <!-- iframe in ebay page is not allowed, youtube iframe video is not supported for ebay listing -->
-                    <iframe pHandler="ytiframe" pHideControls="0" width="640" height="390" style="z-index: 0;" url="http://www.youtube.com/embed/YbT0xy_Jai0?enablejsapi=1&version=3&playerapiid=ytplayer&fs=1&wmode=transparent" frameborder="0" scrolling="no"></iframe>
-                    <!-- play cover begin (optional, can remove play cover) -->
-                    <div u="cover" class="videoCover" style="position: absolute; top: 0px; left: 0px; background-color: #000; background-image: url(../img/play.png); background-position: center center; background-repeat: no-repeat; filter: alpha(opacity=40); opacity: .4; cursor: pointer; display: none; z-index: 1;"></div>
-                    <!-- play cover end -->
-                    <!-- close button begin (optional, can remove close button) -->
-                    <style>
-                        .closeButton { background-image: url(../img/close.png); }
-                        .closeButton:hover { background-position: -30px 0px; }
-                    </style>
-                    <div u="close" class="closeButton" style="position: absolute; top: 0px; right: 1px;
-                        width: 30px; height: 30px; background-color: #000; cursor: pointer; display: none; z-index: 2;">
+                        width: 30px; height: 30px; background-color: #000; cursor: default; display: none; z-index: 2;">
                     </div>
                     <!-- close button end -->
                 </div>
@@ -187,7 +187,7 @@
             {
                 background: url(../img/b03.png) no-repeat;
                 overflow:hidden;
-                cursor: pointer;
+                cursor: default;
             }
             .jssorb03 div { background-position: -5px -4px; }
             .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
