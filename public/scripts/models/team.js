@@ -15,7 +15,7 @@ Team.tohtml = function(){
 };
 
 Team.fetch = function(){
-  $.getJSON('data/teamData.json').then(function(rawData){
+  $.getJSON('../data/teamData.json').then(function(rawData){
     rawData.forEach((ele) => Team.all.push(new Team(ele)));
   }).then(() => Team.tohtml());
 }();

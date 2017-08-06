@@ -1,0 +1,87 @@
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0;
+  }
+}
+
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em;
+}
+.close:hover,
+.close:focus {
+  box-shadow:
+    inset -3.5em 0 0 0,
+    inset 3.5em 0 0 0;
+}
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em;
+  transform: translateY(-0.25em);
+}
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0;
+}
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0;
+}
+.one{
+  font-family: 'Kurale', serif;
+  color: #a972cb;
+}
+.two{
+  font-family: 'Space Mono', monospace;
+  color: #ef6eae;
+}
+.three{
+  font-family: 'Roboto', sans-serif;
+  color: #ff7f82;
+}
+.four{
+  font-family: 'Bellefair', serif;
+  color: #ffa260;
+}
+.five{
+  font-family: 'Gilda Display', serif;
+  color: #8fc866;
+}
+$colors: (
+  fill: #a972cb,
+  pulse: #ef6eae,
+  close: #ff7f82,
+  raise: #ffa260,
+  up: #e4cb58,
+  slide: #8fc866,
+  offset: #19bc8b
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: $color;
+    --hover: adjust-hue($color, 45deg);
+  }
+}
+
+button {
+  /*color: #e4cb58;*/
+  transition: 0.5s;
+
+  &:hover,
+  &:focus {
+    border-color: #a972cb;
+    color: #fff;
+  }
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 1em;
+}
+
+h1 { font-weight: 400; }

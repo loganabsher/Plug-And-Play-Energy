@@ -11,8 +11,18 @@
   display: inline;
   text-align: right;
 }
+#title-image{
+  width: 100%;
+  opacity: .4;
+}
+#live-image{
+  width: 100%;
+}
+#navigation{
+  max-width: 100%;
+}
 @media screen and (min-width: 600px){
   #navigation ul li a{
-    
+
   }
 }
